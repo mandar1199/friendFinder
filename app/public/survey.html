@@ -318,10 +318,16 @@
                     
                     //ajax posts data to the friend api
                     $.post(currentURL + "/api/friends", userData, function(data) {
-
-                    })
+                        // grabbing result from the ajax post
+                        //best match name and image are shown
+                        $("#match-name").text(data.name);
+                        $("match-img").attr("src", data.image);
+                        $("#results-modal").modal("toggle");
+                    });
+                } else {
+                    alert("Please fill out all fields before pushing the sbumit button!");
                 }
-            })
+            });
         </script>
     </body>
 </html>
