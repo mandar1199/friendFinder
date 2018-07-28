@@ -15,14 +15,14 @@ module.exports = function(app) {
     //object to hold the best friend match
     var friendMatch = {
       name:"",
-      image:"",
+      photo:"",
       matchDifference: 1000
     };
     
     //results of user survey
     var userData = req.body;
     var userName = userData.name;
-    var userImage = userData.image;
+    var userImage = userData.photo;
     var userScores = userData.scores;
 
     //calculating the difference between the scores
@@ -42,7 +42,7 @@ module.exports = function(app) {
         if (totalDifference <= friendMatch.matchDifference) {
           //reset the "friend match" to the new friend
           friendMatch.name = friends[i].name;
-          friendMatch.image = friends[i].image;
+          friendMatch.photo = friends[i].photo;
           friendMatch.matchDifference = totalDifference;
         }
       }

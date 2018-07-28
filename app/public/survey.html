@@ -302,7 +302,7 @@
                     //create object for the user's input from the survey
                     var userData = {
                         name: $("#userName").val().trim(),
-                        image: $("#userImage").val().trim(),
+                        photo: $("#userImage").val().trim(),
                         scores: [
                             $("#q1").val(),
                             $("#q2").val(),
@@ -324,7 +324,7 @@
                         // grabbing result from the ajax post
                         //best match name and image are shown
                         $("#matchName").text(data.name);
-                        $("#matchImg").attr("src", data.image);
+                        $("#matchImg").attr("src", data.photo);
                         $("#resultsModal").modal("toggle");
                     });
                 } else {
